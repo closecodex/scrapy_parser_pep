@@ -29,7 +29,8 @@
 
 4. **Запуск парсера:**
 
-   ```scrapy crawl pep
+   ```bash
+   scrapy crawl pep
    ```
    
 ## Результаты
