@@ -43,4 +43,4 @@
 
 1. **Автор: Мария Осмоловская (closecodex@github.com)**
 
-2. **Техно-стек: Python, Scrapy, CSV.**
+2. **Техно-стек: Python, Scrapy, CSV**
