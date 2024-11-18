@@ -3,7 +3,6 @@ import datetime
 from collections import defaultdict
 from pathlib import Path
 from scrapy import signals
-from itemadapter import ItemAdapter
 import logging
 
 
