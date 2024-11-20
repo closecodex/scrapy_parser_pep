@@ -1,17 +1,17 @@
 import csv
 import datetime
-from collections import defaultdict
 import logging
+from collections import defaultdict
 from pathlib import Path
-from scrapy import signals
+
 from itemadapter import ItemAdapter
+from scrapy import signals
 
 
 class PepParsePipeline:
     def __init__(self, results_dir):
         self.results_dir = Path(results_dir)
-        if not self.results_dir.exists():
-            self.results_dir.mkdir(parents=True, exist_ok=True)
+        self.results_dir.mkdir(parents=True, exist_ok=True)
         self.logger = logging.getLogger(__name__)
         self._close_called = False
 
@@ -51,10 +51,11 @@ class PepParsePipeline:
             f"status_summary_{now_str}.csv"
         )
         self.logger.info(f"Saving summary file to: {summary_file}")
-        total_count = sum(self.status_count.values())
         rows = [
-            ['Статус', 'Количество']
-        ] + list(self.status_count.items()) + [['Total', total_count]]
+            ('Статус', 'Количество'),
+            *self.status_count.items(),
+            ('Total', sum(self.status_count.values()))
+        ]
         with open(
             summary_file, mode='w', encoding='utf-8', newline=''
         ) as file:

@@ -1,8 +1,8 @@
 from pathlib import Path
 
 BOT_NAME = 'pep_parse'
-SPIDER_MODULES = [f'{BOT_NAME}.spiders']
 NEWSPIDER_MODULE = f'{BOT_NAME}.spiders'
+SPIDER_MODULES = [f'{BOT_NAME}.spiders']
 RESULTS_DIR = 'results'
 BASE_DIR = Path(__file__).parent.parent
 

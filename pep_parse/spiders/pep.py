@@ -1,4 +1,5 @@
 from urllib.parse import urlparse
+
 import scrapy
 
 from pep_parse.items import PepParseItem
